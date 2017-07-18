@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :find_booking, only: [:show]
+  before_action :find_booking, only: [:show, :total_price, :number_of_days, :available]
   skip_before_action :authenticate_user!, only: :new
 
   def show
@@ -7,6 +7,8 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
+    @number_of_days = 17
+    @total_price = @number_of_days * 215000000
   end
 
   def create
@@ -27,4 +29,6 @@ class BookingsController < ApplicationController
   def find_booking
     @booking = Booking.find(params[:id])
   end
+
+
 end

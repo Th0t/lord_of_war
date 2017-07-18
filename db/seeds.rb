@@ -17,15 +17,13 @@
 #                             price:            42,
 #                             owner_id:         i+1) }
 #
-# 5.times { |i| Booking.create!(start_date:      Date.new,
-#                              end_date:        Date.new,
-#                              status:          "pending",
+# 5.times { |i| Booking.create!(start_date:      "11-07-2017",
+#  2017-07-11                  end_date:        "11-07-2017-07-28                   status:          "pending",
 #                              hirer_id:        i+1,
 #                              weapon:          Weapon.find(i+1)) }
 #
-# 5.times { |i| Booking.create!(start_date:      Date.new,
-#                              end_date:        Date.new,
-#                              status:          "pending",
+# 5.times { |i| Booking.create!(start_date:      "11-07-2017",
+#  2017-07-11                  end_date:        "11-07-2017-07-28                   status:          "pending",
 #                              hirer_id:        i+1,
 #                              weapon_id:       i+1)
 
@@ -136,86 +134,86 @@ weap_pen = Weapon.create!(title:            "Death pen",
                           owner:            user_rambo,
                           photo_url:        "https://duckduckgo.com/i/9f5837a2.jpg")
 
-Booking.create!(start_date:      Date.new,
-               end_date:        Date.new,
+Booking.create!(start_date:      "2017-07-11",
+               end_date:        "2017-07-28",
                status:          "accepted",
                hirer:           user_rambo,
                weapon:          weap_nuke)
 
-Booking.create!(start_date:      Date.new,
-               end_date:        Date.new,
+Booking.create!(start_date:      "2017-07-11",
+               end_date:        "2017-07-28",
                status:          "rejected",
                hirer:           user_wech,
                weapon:          weap_pen)
 
-Booking.create!(start_date:      Date.new,
-               end_date:        Date.new,
+Booking.create!(start_date:      "2017-07-11",
+               end_date:        "2017-07-28",
                status:          "pending",
                hirer:           user_snow,
                weapon:          weap_maul)
 
-Booking.create!(start_date:      Date.new,
-               end_date:        Date.new,
+Booking.create!(start_date:      "2017-07-11",
+               end_date:        "2017-07-28",
                status:          "pending",
                hirer:           user_rambo,
                weapon:          weap_goun)
 
-Booking.create!(start_date:      Date.new,
-               end_date:        Date.new,
+Booking.create!(start_date:      "2017-07-11",
+               end_date:        "2017-07-28",
                status:          "pending",
                hirer:           user_putin,
                weapon:          weap_raff)
 
-Booking.create!(start_date:      Date.new,
-               end_date:        Date.new,
+Booking.create!(start_date:      "2017-07-11",
+               end_date:        "2017-07-28",
                status:          "pending",
                hirer:           user_rambo,
                weapon:          weap_m134)
 
-Booking.create!(start_date:      Date.new,
-               end_date:        Date.new,
+Booking.create!(start_date:      "2017-07-11",
+               end_date:        "2017-07-28",
                status:          "pending",
                hirer:           user_gege,
                weapon:          weap_ak47)
 
-Booking.create!(start_date:      Date.new,
-               end_date:        Date.new,
+Booking.create!(start_date:      "2017-07-11",
+               end_date:        "2017-07-28",
                status:          "pending",
                hirer:           user_farc,
                weapon:          weap_bra5)
 
-Booking.create!(start_date:      Date.new,
-               end_date:        Date.new,
+Booking.create!(start_date:      "2017-07-11",
+               end_date:        "2017-07-28",
                status:          "pending",
                hirer:           user_maul,
                weapon:          weap_m134)
 
-Booking.create!(start_date:      Date.new,
-               end_date:        Date.new,
+Booking.create!(start_date:      "2017-07-11",
+               end_date:        "2017-07-28",
                status:          "pending",
                hirer:           user_snow,
                weapon:          weap_bra5)
 
-Booking.create!(start_date:      Date.new,
-               end_date:        Date.new,
+Booking.create!(start_date:      "2017-07-11",
+               end_date:        "2017-07-28",
                status:          "pending",
                hirer:           user_putin,
                weapon:          weap_pen)
 
-Booking.create!(start_date:      Date.new,
-               end_date:        Date.new,
+Booking.create!(start_date:      "2017-07-11",
+               end_date:        "2017-07-28",
                status:          "pending",
                hirer:           user_farc,
                weapon:          weap_raff)
 
-Booking.create!(start_date:      Date.new,
-               end_date:        Date.new,
+Booking.create!(start_date:      "2017-07-11",
+               end_date:        "2017-07-28",
                status:          "pending",
                hirer:           user_snow,
                weapon:          weap_snow)
 
-Booking.create!(start_date:      Date.new,
-               end_date:        Date.new,
+Booking.create!(start_date:      "2017-08-01",
+               end_date:        "2017-09-30",
                status:          "pending",
                hirer:           user_gege,
                weapon:          weap_ak47)
