@@ -6,9 +6,15 @@ class BookingsController < ApplicationController
   end
 
   def new
-    @booking = Booking.new
-    @number_of_days = 17
-    @total_price = @number_of_days * 215000000
+    @booking = Booking.new(booking_params)
+    @weapon = Weapon.find(params[:weapon_id])
+    @number_of_days = (@booking.end_date - @booking.start_date).to_i
+    if @number_of_days <= 0
+      flash[:alert] = "end date must be superior to start date"
+      redirect_to weapon_path(@weapon)
+    else
+      @total_price = @weapon.price * @number_of_days
+    end
   end
 
   def create
@@ -29,6 +35,5 @@ class BookingsController < ApplicationController
   def find_booking
     @booking = Booking.find(params[:id])
   end
-
 
 end
