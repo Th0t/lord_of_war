@@ -27,7 +27,9 @@
 #                              end_date:        Date.new,
 #                              status:          "pending",
 #                              hirer_id:        i+1,
-#                              weapon_id:       i+1) }
+#                              weapon_id:       i+1)
+
+User.destroy_all
 
 user_putin = User.create!(first_name:         "Vladimir",
                          last_name:          "Putin",
