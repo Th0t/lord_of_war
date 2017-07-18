@@ -1,4 +1,5 @@
 class Weapon < ApplicationRecord
+  # weapons category are defined again in weapon controller
   weapons_category = %w(pistols riffles knives heavy shotguns swords)
 
   belongs_to :owner, class_name: "User"

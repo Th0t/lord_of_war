@@ -1,0 +1,56 @@
+<div id="top-wrapper">
+  <h1>Find the perfect weapon to rent</h1>
+
+  <div id="filters">
+    <form action="#" method="get">
+      <label for="query" class="query-label">Weapons to find :</label>
+      <input name="query" id="query" type="text" value="<%= params[:query] %>"/>
+
+      <label for="min-price" class="min-price-label">Min price :</label>
+      <input name="min-price" id="min-price" type="number" value="<%= params["min-price"] %>"/>
+
+
+      <label for="max-price" class="max-price-label">Max price :</label>
+      <input name="max-price" id="max-price" type="number" value="<%= params["max-price"] %>"/>
+
+
+      <label for="category">Category :</label>
+      <select name="category" id="category">
+        <% @weapons_category.each do |category| %>
+          <% if params[:category] == category %>
+            <option value="<%= category %>" selected="selected"><%= category %></option>
+          <% else %>
+            <option value="<%= category %>"><%= category %></option>
+          <% end %>
+        <% end %>
+
+        <% if !params[:category].present? || params[:category] == "all" %>
+          <option value="all" selected="selected">all</option>
+        <% else %>
+          <option value="all">all</option>
+        <% end %>
+      </select>
+
+      <input type="submit" value="Go!" class="btn"/>
+    </form>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <% @weapons.each do |weapon| %>
+    <div class="col-xs-12 col-sm-4">
+      <%= link_to weapon_path(weapon.id) do %>
+      <div class="card">
+        <div class="card-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+        url('<%= image_path weapon.photo_url %>');"></div>
+        <div class="card-description">
+          <div class="card-price"><%= "#{weapon.price} €" %></div>
+          <div class="card-title"><%= weapon.title %></div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <% end %>
+  </div>
+</div>
