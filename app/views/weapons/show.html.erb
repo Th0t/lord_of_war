@@ -8,7 +8,7 @@
 
           <div class="header">
             <div class="price">
-              <h1>€ <%= @weapon.price %> / day </h1>
+              <h1>€ <%= number_with_delimiter(@weapon.price) %> / day </h1>
             </div>
             <div class="heart-wrap">
               <a href="#"><i class="fa heart"></i></a>

@@ -1,7 +1,7 @@
 class WeaponsController < ApplicationController
   before_action :find_weapon, only: [:show]
-  skip_before_action :authenticate_user!, only:
-  
+  skip_before_action :authenticate_user!
+
   def index
     @weapons_category = %w(pistols riffles knives heavy shotguns swords)
     @weapons = Weapon.all

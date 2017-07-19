@@ -8,9 +8,11 @@ class BookingsController < ApplicationController
   def new
     @booking = Booking.new(booking_params)
     @weapon = Weapon.find(params[:weapon_id])
-    @number_of_days = (@booking.end_date - @booking.start_date).to_i
+    @start_date = DateTime.strptime(booking_params[:start_date], '%m/%d/%Y').to_date
+    @end_date = DateTime.strptime(booking_params[:end_date], '%m/%d/%Y').to_date
+    @number_of_days = (@end_date - @start_date).to_i
     if @number_of_days <= 0
-      flash[:alert] = "end date must be superior to start date"
+      flash[:alert] = "Wrong dates : end date must be superior to start date"
       redirect_to weapon_path(@weapon)
     else
       @total_price = @weapon.price * @number_of_days
