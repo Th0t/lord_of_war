@@ -6,22 +6,28 @@
   position: relative;
   border-radius: 4px;
   margin: 10px;
+  border-radius: $border-radius-base;
+
 }
 .card-img {
-  background-size: contain !important;
+  background-size: cover !important;
   background-repeat: no-repeat;
   background-position: center;
   height: 150px;
+  border-top-left-radius: $border-radius-base;
+  border-top-right-radius: $border-radius-base;
+
 }
 .card-price {
   position: absolute;
-  background-color: $color_01;
-  border-radius: 50%;
-  padding: 4px;
-  bottom: 27px;
-  right: -4px;
+  background-color: $orange;
+  padding: 5px 10px;
+  bottom: 25px;
+  right: 0;
 }
 .card-title {
   background-color: $color_01;
   text-align: center;
+  border-bottom-left-radius: $border-radius-base;
+  border-bottom-right-radius: $border-radius-base;
 }

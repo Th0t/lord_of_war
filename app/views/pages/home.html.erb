@@ -5,9 +5,8 @@
                             url('<%= image_path 'home-bg.jpg' %>');">
   <div class="banner-content">
     <h1>Welcome on Lord of War</h1>
-    <p>What weapon do you hope to find here?</p>
+    <p>Find your dream weapon</p>
     <form action="weapons" method="get" class="form-inline">
-      <label for="query" class="query-label">Weapons to find :</label>
       <input name="query" id="query" type="text" class="form-control input-lg"/>
       <input type="submit" value="Go!" class="btn btn-primary btn-lg"/>
     </form>
@@ -24,7 +23,7 @@
         <div class="card-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
         url('<%= image_path weapon.photo_url %>');"></div>
         <div class="card-description">
-          <div class="card-price"><%= "#{weapon.price} €" %></div>
+          <div class="card-price"><%= "#{number_with_delimiter(weapon.price)} €" %></div>
           <div class="card-title"><%= weapon.title %></div>
         </div>
       </div>

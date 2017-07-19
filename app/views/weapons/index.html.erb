@@ -1,6 +1,8 @@
-<div id="top-wrapper">
-  <h1>Find the perfect weapon to rent</h1>
+<% content_for :title, "Lord of War - Weapons" %>
 
+<div id="top-wrapper">
+  <h1>Find your dream weapon</h1>
+  <br>
   <div id="filters">
     <form action="#" method="get">
       <label for="query" class="query-label">Weapons to find :</label>
@@ -17,17 +19,17 @@
       <label for="category">Category :</label>
       <select name="category" id="category">
         <% @weapons_category.each do |category| %>
-          <% if params[:category] == category %>
-            <option value="<%= category %>" selected="selected"><%= category %></option>
-          <% else %>
-            <option value="<%= category %>"><%= category %></option>
-          <% end %>
+        <% if params[:category] == category %>
+        <option value="<%= category %>" selected="selected"><%= category %></option>
+        <% else %>
+        <option value="<%= category %>"><%= category %></option>
+        <% end %>
         <% end %>
 
         <% if !params[:category].present? || params[:category] == "all" %>
-          <option value="all" selected="selected">all</option>
+        <option value="all" selected="selected">all</option>
         <% else %>
-          <option value="all">all</option>
+        <option value="all">all</option>
         <% end %>
       </select>
 
@@ -37,7 +39,7 @@
 </div>
 
 <div class="container">
-  <div class="row">
+  <div class="row" id="weapons-list">
     <% @weapons.each do |weapon| %>
     <div class="col-xs-12 col-sm-4">
       <%= link_to weapon_path(weapon.id) do %>
@@ -45,7 +47,7 @@
         <div class="card-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
         url('<%= image_path weapon.photo_url %>');"></div>
         <div class="card-description">
-          <div class="card-price"><%= "#{weapon.price} €" %></div>
+          <div class="card-price"><%= "#{number_with_delimiter(weapon.price)} €" %></div>
           <div class="card-title"><%= weapon.title %></div>
         </div>
       </div>

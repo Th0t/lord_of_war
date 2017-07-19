@@ -161,19 +161,20 @@ body {
 
 
 .container-card-right {
- background: $white;
- max-width: 300px;
- margin: 0 auto;
- margin-top: 20px;
- padding: 10px 30px;
- border-radius: 20px;
- .wrapper {
-  margin: 0;
-  .header {
-   padding: 0;
-   margin-top: -30px;
+  color: $black;
+  background: $white;
+  max-width: 300px;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 10px 30px;
+  border-radius: 20px;
+  .wrapper {
+    margin: 0;
+    .header {
+     padding: 0;
+     margin-top: -30px;
+   }
  }
-}
 }
 
 .datepicker {
