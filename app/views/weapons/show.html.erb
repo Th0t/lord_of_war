@@ -1,0 +1,71 @@
+<div class="container text-center">
+
+  <div class="row col-xs-12 col-sm-9 col-sm-offset-3 ">
+
+    <h2 class="title">Weapon details<h2>
+      <div class="container-card">
+        <div class="wrapper">
+
+          <div class="header">
+            <div class="price">
+              <h1>€ <%= @weapon.price %> / day </h1>
+            </div>
+            <div class="heart-wrap">
+              <a href="#"><i class="fa heart"></i></a>
+            </div>
+          </div>
+
+          <div class="product">
+            <%= image_tag("#{@weapon.photo_url}", class: "img") %>
+          </div>
+
+          <div class="info">
+            <div class="title">
+              <h1><%= @weapon.title %></h1>
+              <p><%= @weapon.description %></p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class= "row col-xs-12 col-sm-3">
+      <div class="row">
+        <h2 tag="title-book">Book now</h2>
+        <div class="container-card-right">
+          <div class="wrapper">
+            <div>
+              <%= simple_form_for @weapon.bookings.build, url: new_weapon_booking_path(@weapon), method: :get do |f| %>
+              <%= f.input :start_date, as: :string, input_html: { class: "datepicker"}, label: "Start date"%>
+              <%= f.input :end_date, as: :string, input_html: { class: "datepicker"}, label: "End date" %>
+              <%= f.submit "Go", class: "btn btn-danger" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="row">
+        <h2 tag="title-owner">Owner</h2>
+        <div class="container-card-right">
+          <div class="wrapper">
+
+            <div class="avatar-lg">
+              <%= image_tag("#{User.find(@weapon.owner_id).avatar_url}") %>
+            </div>
+
+            <div class="info">
+              <div class="title-user">
+                <h3><%= User.find(@weapon.owner_id).last_name%></h3>
+                <h4><%= User.find(@weapon.owner_id).first_name %></h4>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
