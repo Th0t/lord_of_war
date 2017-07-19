@@ -5,8 +5,9 @@
 //= require bootstrap-datepicker
 
 $(document).ready(function() {
-  console.log("start");
+
   $('.datepicker').datepicker({
+    startDate: new Date(),
+    weekStart: 1
   });
-  console.log("finish");
 });
