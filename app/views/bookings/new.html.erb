@@ -1,0 +1,61 @@
+<div class="container text-center">
+  <div class="row col-xs-12 col-sm-9 col-sm-offset-3 ">
+    <h2 class="title">Your booking details<h2>
+      <div class="container-card">
+        <div class="wrapper">
+
+         <div class="header">
+          <div class="price">
+            <h1>€ <%= @total_price %> for <%= @number_of_days %> days </h1>
+          </div>
+          <div class="heart-wrap">
+            <a href="#"><i class="fa heart"></i></a>
+          </div>
+        </div>
+        <div class="product">
+          <%= image_tag("#{@weapon.photo_url}", class: "img") %>
+        </div>
+
+        <div class="info">
+          <div class="title">
+            <h1><%= @weapon.title %></h1>
+            <p><%= @weapon.description %></p>
+            <div class="booking_info text-center">
+
+              <ul class="list-group list-booking">
+                <li class="list-group-item"><h5><strong>Starting date: </strong><%= @booking.start_date %></h5></li>
+                <li class="list-group-item"><h5><strong>Ending date: </strong><%= @booking.end_date %></h5></li>
+                <li class="list-group-item"><h5><strong>Total number of days: </strong><%= @number_of_days%> </h5></li>
+                <li class="list-group-item"><h5><strong>Price / day: </strong> € <%= @weapon.price %></h5></li>
+                <li class="list-group-item"><h5><strong>Total price: </strong> € <%= @total_price %></h5></li>
+                <li class="list-group-item"><h5><strong>Available: </strong><%= @weapon.availability %></h5></li>
+              </ul>
+
+            </div>
+          </div>
+          <button class="askBtn">Ask for booking</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class= "row col-xs-12 col-sm-3">
+    <h2 tag="title-owner">Owner</h2>
+    <div class="container-card-right">
+      <div class="wrapper">
+
+        <div class="avatar-lg">
+          <%= image_tag("#{User.find(@weapon.owner_id).avatar_url}") %>
+        </div>
+
+        <div class="info">
+          <div class="title-user">
+            <h2><%= User.find(@weapon.owner_id).last_name%></h2>
+            <h4><%= User.find(@weapon.owner_id).first_name %></h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

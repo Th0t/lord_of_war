@@ -1,5 +1,7 @@
 class WeaponsController < ApplicationController
-
+  before_action :find_weapon, only: [:show]
+  skip_before_action :authenticate_user!, only:
+  
   def index
     @weapons_category = %w(pistols riffles knives heavy shotguns swords)
     @weapons = Weapon.all
@@ -37,5 +39,9 @@ class WeaponsController < ApplicationController
     query_hash[:category] == "all" ? query_hash[:category] = "" : query_hash[:category] =   query_hash[:category]
     query_hash.delete_if { |k, value| value == "" }
     return query_hash
+  end
+
+  def find_weapon
+    @weapon = Weapon.find(params[:id])
   end
 end

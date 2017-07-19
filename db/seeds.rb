@@ -17,19 +17,20 @@
 #                             price:            42,
 #                             owner_id:         i+1) }
 #
-# 5.times { |i| Booking.create!(start_date:      Date.new,
-#                              end_date:        Date.new,
-#                              status:          "pending",
+
+# 5.times { |i| Booking.create!(start_date:      "11-07-2017",
+#  2017-07-11                  end_date:        "11-07-2017-07-28                   status:          "pending",
 #                              hirer_id:        i+1,
 #                              weapon:          Weapon.find(i+1)) }
 #
-# 5.times { |i| Booking.create!(start_date:      Date.new,
-#                              end_date:        Date.new,
-#                              status:          "pending",
+# 5.times { |i| Booking.create!(start_date:      "11-07-2017",
+#  2017-07-11                  end_date:        "11-07-2017-07-28                   status:          "pending",
 #                              hirer_id:        i+1,
 #                              weapon_id:       i+1)
 
 User.destroy_all
+
+p "Start populating db with seeds"
 
 user_putin = User.create!(first_name:         "Vladimir",
                          last_name:          "Putin",
@@ -78,144 +79,157 @@ weap_raff = Weapon.create!(title:            "Dassault Rafale",
                           category:         "heavy",
                           price:            215000000,
                           owner:            user_putin,
-                          photo_url:        "https://upload.wikimedia.org/wikipedia/commons/7/73/Rafale_-_RIAT_2012_%287852045796%29.jpg")
+                          photo_url:        "https://upload.wikimedia.org/wikipedia/commons/7/73/Rafale_-_RIAT_2012_%287852045796%29.jpg",
+                          availability:     "yes")
 
 weap_m134 = Weapon.create!(title:            "Gatling M134",
                           description:      "The M134 Minigun is a 7.62×51mm NATO, six-barrel rotary machine gun with a high rate of fire (2,000 to 6,000 rounds per minute) which can also fire at a high sustained rate.[3] It features Gatling-style rotating barrels with an external power source, normally an electric motor.",
                           category:         "heavy",
                           price:            215000,
                           owner:            user_rambo,
-                          photo_url:        "https://upload.wikimedia.org/wikipedia/commons/e/ec/Gau_17_7.62mm_minigun.jpg")
+                          photo_url:        "https://upload.wikimedia.org/wikipedia/commons/e/ec/Gau_17_7.62mm_minigun.jpg",
+                          availability:     "yes")
 
 weap_ak47 = Weapon.create!(title:            "AK-47",
                           description:      "The AK-47, or AK as it is officially known (Russian: Автомат Калашникова, translit. Avtomat Kalashnikova, lit. 'Kalashnikov's Automatic Rifle'), also known as the Kalashnikov, is a selective-fire (semi-automatic and automatic), gas-operated 7.62×39 mm assault rifle, developed in the Soviet Union by Mikhail Kalashnikov. It is the originating firearm of the Kalashnikov rifle (or 'AK') family.",
                           category:         "riffles",
                           price:            215,
                           owner:            user_farc,
-                          photo_url:        "https://upload.wikimedia.org/wikipedia/commons/1/18/AK_47.JPG")
+                          photo_url:        "https://upload.wikimedia.org/wikipedia/commons/1/18/AK_47.JPG",
+                          availability:     "yes")
 
 weap_bra5 = Weapon.create!(title:            "Browning A-5",
                           description:      "The Browning Automatic 5, most often Auto-5 or simply A-5, is a recoil-operated semi-automatic shotgun designed by John Browning.",
                           category:         "shotguns",
                           price:            215,
                           owner:            user_gege,
-                          photo_url:        "https://upload.wikimedia.org/wikipedia/commons/6/6f/RemingtonMd11.JPG")
+                          photo_url:        "https://upload.wikimedia.org/wikipedia/commons/6/6f/RemingtonMd11.JPG",
+                          availability:     "yes")
 
 weap_goun = Weapon.create!(title:            "no uzed goun",
                           description:      "almost never uzd good gun very good deal plz cash to western union deliveryvery fast no scam, wasn't used 4 bludy faild robery with bludy dead peeplole",
                           category:         "pistols",
                           price:            214,
                           owner:            user_wech,
-                          photo_url:        "http://i.dailymail.co.uk/i/pix/2013/08/04/article-0-1B257780000005DC-975_634x463.jpg")
+                          photo_url:        "http://i.dailymail.co.uk/i/pix/2013/08/04/article-0-1B257780000005DC-975_634x463.jpg",
+                          availability:     "yes")
 
 weap_maul = Weapon.create!(title:            "Lightsaber",
                           description:      "The Sith apprentice Darth Maul wielded a double-bladed lightsaber made by joining two hilts together end-to-end. Maul’s dexterity and extensive training allowed him to use his weapon as a single-bladed saber, or to activate both crimson blades and fight multiple opponents at once. On Naboo, Maul killed Qui-Gon Jinn with his saber, but Obi-Wan Kenobi cut his weapon in half and soon did the same to Maul. Unknown to Obi-Wan, Maul survived, and retained the working half of his weapon. He used this single-bladed saber while leading the Shadow Collective.",
                           category:         "swords",
                           price:            215000,
                           owner:            user_maul,
-                          photo_url:        "https://lumiere-a.akamaihd.net/v1/images/darth-mauls-lightsaber_3c972f6c.jpeg?region=0%2C61%2C1560%2C878&width=768")
+                          photo_url:        "https://lumiere-a.akamaihd.net/v1/images/darth-mauls-lightsaber_3c972f6c.jpeg?region=0%2C61%2C1560%2C878&width=768",
+                          availability:     "yes")
 
 weap_snow = Weapon.create!(title:            "Longclaw",
                           description:      "Longclaw is the ancestral Valyrian steel bastard sword of House Mormont. ",
                           category:         "swords",
                           price:            215000000,
                           owner:            user_snow,
-                          photo_url:        "http://awoiaf.westeros.org/images/8/8b/Longclaw%2C_Sword_of_Jon_Snow.jpg")
+                          photo_url:        "http://awoiaf.westeros.org/images/8/8b/Longclaw%2C_Sword_of_Jon_Snow.jpg",
+                          availability:     "yes")
 
 weap_nuke = Weapon.create!(title:            "Tsar Bomba",
                           description:      "The device offically designated RDS-220, known to its designers as Big Ivan, and nicknamed in the west Tsar Bomba (and referred to as the Big Bomb by Sakharov in his Memoirs [Sakharov 1990]) was the largest nuclear weapon ever constructed or detonated.",
                           category:         "heavy",
                           price:            215000000,
                           owner:            user_putin,
-                          photo_url:        "http://nuclearweaponarchive.org/Russia/TsarBomba2Big.jpg")
+                          photo_url:        "http://nuclearweaponarchive.org/Russia/TsarBomba2Big.jpg",
+                          availability:     "yes")
 
 weap_pen = Weapon.create!(title:            "Death pen",
                           description:      "A pencil is a writing implement or art medium constructed of a narrow, solid pigment core inside a protective casing which prevents the core from being broken or leaving marks on the user's hand during use.",
                           category:         "heavy",
                           price:            215000000,
                           owner:            user_rambo,
-                          photo_url:        "https://duckduckgo.com/i/9f5837a2.jpg")
+                          photo_url:        "https://duckduckgo.com/i/9f5837a2.jpg",
+                          availability:     "yes")
 
-Booking.create!(start_date:      Date.new,
-               end_date:        Date.new,
+Booking.create!(start_date:      "2017-07-11",
+               end_date:        "2017-07-28",
                status:          "accepted",
                hirer:           user_rambo,
                weapon:          weap_nuke)
 
-Booking.create!(start_date:      Date.new,
-               end_date:        Date.new,
+
+Booking.create!(start_date:      "2017-07-11",
+               end_date:        "2017-07-28",
                status:          "rejected",
                hirer:           user_wech,
                weapon:          weap_pen)
 
-Booking.create!(start_date:      Date.new,
-               end_date:        Date.new,
+Booking.create!(start_date:      "2017-07-11",
+               end_date:        "2017-07-28",
                status:          "pending",
                hirer:           user_snow,
                weapon:          weap_maul)
 
-Booking.create!(start_date:      Date.new,
-               end_date:        Date.new,
+
+Booking.create!(start_date:      "2017-07-11",
+               end_date:        "2017-07-28",
                status:          "pending",
                hirer:           user_rambo,
                weapon:          weap_goun)
 
-Booking.create!(start_date:      Date.new,
-               end_date:        Date.new,
+Booking.create!(start_date:      "2017-07-11",
+               end_date:        "2017-07-28",
                status:          "pending",
                hirer:           user_putin,
                weapon:          weap_raff)
 
-Booking.create!(start_date:      Date.new,
-               end_date:        Date.new,
+Booking.create!(start_date:      "2017-07-11",
+               end_date:        "2017-07-28",
                status:          "pending",
                hirer:           user_rambo,
                weapon:          weap_m134)
 
-Booking.create!(start_date:      Date.new,
-               end_date:        Date.new,
+Booking.create!(start_date:      "2017-07-11",
+               end_date:        "2017-07-28",
                status:          "pending",
                hirer:           user_gege,
                weapon:          weap_ak47)
 
-Booking.create!(start_date:      Date.new,
-               end_date:        Date.new,
+Booking.create!(start_date:      "2017-07-11",
+               end_date:        "2017-07-28",
                status:          "pending",
                hirer:           user_farc,
                weapon:          weap_bra5)
 
-Booking.create!(start_date:      Date.new,
-               end_date:        Date.new,
+Booking.create!(start_date:      "2017-07-11",
+               end_date:        "2017-07-28",
                status:          "pending",
                hirer:           user_maul,
                weapon:          weap_m134)
 
-Booking.create!(start_date:      Date.new,
-               end_date:        Date.new,
+Booking.create!(start_date:      "2017-07-11",
+               end_date:        "2017-07-28",
                status:          "pending",
                hirer:           user_snow,
                weapon:          weap_bra5)
 
-Booking.create!(start_date:      Date.new,
-               end_date:        Date.new,
+Booking.create!(start_date:      "2017-07-11",
+               end_date:        "2017-07-28",
                status:          "pending",
                hirer:           user_putin,
                weapon:          weap_pen)
 
-Booking.create!(start_date:      Date.new,
-               end_date:        Date.new,
+Booking.create!(start_date:      "2017-07-11",
+               end_date:        "2017-07-28",
                status:          "pending",
                hirer:           user_farc,
                weapon:          weap_raff)
 
-Booking.create!(start_date:      Date.new,
-               end_date:        Date.new,
+Booking.create!(start_date:      "2017-07-11",
+               end_date:        "2017-07-28",
                status:          "pending",
                hirer:           user_snow,
                weapon:          weap_snow)
 
-Booking.create!(start_date:      Date.new,
-               end_date:        Date.new,
+Booking.create!(start_date:      "2017-08-01",
+               end_date:        "2017-09-30",
                status:          "pending",
                hirer:           user_gege,
                weapon:          weap_ak47)
+
+p "finished with success !"
