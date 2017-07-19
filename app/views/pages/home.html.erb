@@ -1,15 +1,21 @@
-<h1>Welcome on Lord of War</h1>
+<% content_for :title, "Lord of War - Home" %>
 
-<div id="home-search">
-  <p>What weapon do you hope to find here?</p>
-  <form action="weapons" method="get">
-    <label for="query" class="query-label">Weapons to find :</label>
-    <input name="query" id="query" type="text"/>
-    <input type="submit" value="Go!" class="btn"/>
-  </form>
+
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%),
+                            url('<%= image_path 'home-bg.jpg' %>');">
+  <div class="banner-content">
+    <h1>Welcome on Lord of War</h1>
+    <p>What weapon do you hope to find here?</p>
+    <form action="weapons" method="get" class="form-inline">
+      <label for="query" class="query-label">Weapons to find :</label>
+      <input name="query" id="query" type="text" class="form-control input-lg"/>
+      <input type="submit" value="Go!" class="btn btn-primary btn-lg"/>
+    </form>
+    <a class="last-arrow-link" href="#last-weapons"><%= image_tag 'down-arrow.png' %></a>
+  </div>
 </div>
 
-<div class="container">
+<div id="last-weapons" class="container">
   <div class="row">
     <% @weapons.each do |weapon| %>
     <div class="col-xs-12 col-sm-3">

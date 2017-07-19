@@ -2,3 +2,14 @@
  * CSS code specific to home page
  * (margin/padding adjustments)
  * ------------------------------------- */
+.last-arrow-link img {
+  width: 40px;
+  position: absolute;
+  bottom: 20px;
+}
+
+#last-weapons {
+  height: 60vh;
+  width: 100%;
+  background-color: $color_01;
+}
