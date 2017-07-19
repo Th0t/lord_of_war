@@ -1,44 +1,48 @@
 <% content_for :title, "Lord of War - Weapons" %>
 
 <div id="top-wrapper">
-  <h1>Find your dream weapon</h1>
-  <br>
-  <div id="filters">
-    <form action="#" method="get">
-      <label for="query" class="query-label">Weapons to find :</label>
-      <input name="query" id="query" type="text" value="<%= params[:query] %>"/>
+  <div class="row">
+    <div class="col-xs-12">
+      <h1>Find your dream weapon</h1>
+      <br>
+      <div id="filters">
+        <form action="#" method="get">
+          <label for="query" class="query-label">Weapons to find :</label>
+          <input name="query" id="query" type="text" value="<%= params[:query] %>"/>
 
-      <label for="min-price" class="min-price-label">Min price :</label>
-      <input name="min-price" id="min-price" type="number" value="<%= params["min-price"] %>"/>
-
-
-      <label for="max-price" class="max-price-label">Max price :</label>
-      <input name="max-price" id="max-price" type="number" value="<%= params["max-price"] %>"/>
+          <label for="min-price" class="min-price-label">Min price :</label>
+          <input name="min-price" id="min-price" type="number" value="<%= params["min-price"] %>"/>
 
 
-      <label for="category">Category :</label>
-      <select name="category" id="category">
-        <% @weapons_category.each do |category| %>
-        <% if params[:category] == category %>
-        <option value="<%= category %>" selected="selected"><%= category %></option>
-        <% else %>
-        <option value="<%= category %>"><%= category %></option>
-        <% end %>
-        <% end %>
+          <label for="max-price" class="max-price-label">Max price :</label>
+          <input name="max-price" id="max-price" type="number" value="<%= params["max-price"] %>"/>
 
-        <% if !params[:category].present? || params[:category] == "all" %>
-        <option value="all" selected="selected">all</option>
-        <% else %>
-        <option value="all">all</option>
-        <% end %>
-      </select>
 
-      <input type="submit" value="Go!" class="btn"/>
-    </form>
+          <label for="category">Category :</label>
+          <select name="category" id="category">
+            <% @weapons_category.each do |category| %>
+            <% if params[:category] == category %>
+            <option value="<%= category %>" selected="selected"><%= category %></option>
+            <% else %>
+            <option value="<%= category %>"><%= category %></option>
+            <% end %>
+            <% end %>
+
+            <% if !params[:category].present? || params[:category] == "all" %>
+            <option value="all" selected="selected">all</option>
+            <% else %>
+            <option value="all">all</option>
+            <% end %>
+          </select>
+
+          <input type="submit" value="Go!" class="btn"/>
+        </form>
+      </div>
+    </div>
   </div>
 </div>
 
-<div class="container">
+<div class="container" style="text-align:center">
   <div class="row" id="weapons-list">
     <% @weapons.each do |weapon| %>
     <div class="col-xs-12 col-sm-4">
