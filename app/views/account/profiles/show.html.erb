@@ -3,9 +3,9 @@
     <a class="tab active"  data-target="#dashboard">
       <p>Dashboard</p>
     </a>
-    <a class="tab"  data-target="#weapons">
+    <%= link_to account_weapons_path, class: "tab", :data => { :target => "#weapons" } do %>
       <p>My weapons</p>
-    </a>
+    <% end %>
     <a class="tab"  data-target="#booksforme">
       <p>Books for me</p>
     </a>
