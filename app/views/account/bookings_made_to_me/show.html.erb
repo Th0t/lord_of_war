@@ -34,9 +34,9 @@
 
             </div>
             <% if @booking.status == "pending" %>
-            <div class="inline-list">
-              <%= link_to "Accept booking", accept_account_bookings_made_to_me_path, method: :patch, class: "btn btn-success" %>
-              <%= link_to "Reject booking", reject_account_bookings_made_to_me_path, method: :patch, class: "btn btn-danger" %>
+            <div class="inline-list" >
+              <%= link_to "Accept booking", accept_account_bookings_made_to_me_path, method: :patch, class: "btn btn-success", id: "btn-show-accept" %>
+              <%= link_to "Reject booking", reject_account_bookings_made_to_me_path, method: :patch, class: "btn btn-danger", id: "btn-show-accept"  %>
             </div>
             <% end %>
           </div>
