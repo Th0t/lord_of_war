@@ -1,0 +1,43 @@
+#btn-accept-reject {
+  padding: 10px 20px;
+}
+
+.button-status-green {
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: $green;
+  flex: 0 0 50px;
+  right: 10px;
+  align-items: right;
+}
+
+
+.button-status-red {
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: $red;
+  flex: 0 0 50px;
+  right: 10px;
+  align-items: right;
+
+}
+
+
+.button-status-blue {
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: $blue;
+  flex: 0 0 50px;
+  right: 10px;
+  align-items: right;
+}
+
+#btn-show-accept {
+  margin: 50px 30px;
+}
