@@ -1,0 +1,14 @@
+<div class="container">
+<ul class="list-group">
+  <% @bookings_made_by_me.each do |booking| %>
+    <%= link_to account_bookings_made_by_me_path(booking), id:"link" do %>
+      <li class="list-group-item" id="list-bookings-made-by-me">
+      <strong>#<%= booking.id %>
+      - <%= Weapon.find(booking.weapon_id).title %>
+      - € <%= number_with_delimiter((booking.end_date - booking.start_date).to_i * Weapon.find(booking.weapon_id).price) %>  </strong>
+      - reservation: from <%=booking.start_date %> to <%=booking.end_date %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
+</div>
