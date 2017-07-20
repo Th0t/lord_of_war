@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+// Variables
+$font: 'Open Sans', sans-serif;
+$bg: $black;
+$price: #FE6417;
+$heart1: #212129;
+$heart2: $black;
+$title: #6D1DEB;
+$button: $green;
+
+$white: #fff;
+$black: #212129;
+
+* {
+ font-size: 18px;
+ margin: 0;
+ padding: 0;
+ font-family: $font;
+ text-decoration: none;
+ text-align: center;
+ outline: none;
+ border: none;
+ -webkit-box-sizing: border-box;
+ -moz-box-sizing: border-box;
+ -ms-box-sizing: border-box;
+ box-sizing: border-box;
+}
+
+::selection {
+ background: $black;
+}
+
+
+#title-book {
+  color: $black;
+}
+
+img {
+ max-width: 100%;
+ border-radius: 20px;
+ margin: 20px 0 0 0;
+ -webkit-user-select: none;
+ -moz-user-select: none;
+ -ms-user-select: none;
+ user-select: none;
+}
+
+html, body {
+ height: 100%;
+}
+
+body {
+ background: $bg;
+}
+
+.container {
+  margin: auto;
+  padding: 0;
+}
+
+.row {
+  margin: 0 auto;
+}
+
+.list-booking {
+  margin-top: 30px;
+}
+
+.container-card {
+ background: $white;
+ max-width: 800px;
+ margin: 0 auto;
+ margin-top: 20px;
+ padding: 50px;
+ border-radius: 20px;
+ .wrapper {
+  margin: 0;
+  .header {
+   padding: 0;
+   margin-top: -30px;
+   .price h1 {
+    color: $price;
+    font-size: 1.65em;
+    text-align: left;
+    font-weight: bold;
+  }
+  .heart-wrap {
+    position: relative;
+    right: 0;
+    left: 0;
+    margin-top: -40px;
+    text-align: right;
+    i.heart:after {
+     text-align: right;
+     content: "\f004";
+     color: $heart2;
+     font-size: 1.8em;
+   }
+   i.heart:active:after {
+     content: "\f004";
+     color: $heart2;
+   }
+ }
+}
+.info {
+ padding: 0;
+ .title h1 {
+  color: $title;
+  font-size: 1.5em;
+  margin-top: 15px;
+  padding: 10px;
+}
+
+.title {
+  h2 {
+    margin-top: 50px;
+    padding-top: 50px;
+    font-weight: bolder;
+    color: $title;
+  }
+  h4, h5 {
+    text-align: left;
+    color: $black;
+  }
+  p  {
+    text-align: justify;
+    color: $black;
+  }
+}
+
+.askBtn {
+  background: $button;
+  color: $white;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-top: 15px;
+  padding: 15px 30px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: 300ms;
+  &:hover {
+   background: $black;
+   color: $button;
+   transition: 300ms;
+ }
+}
+}
+}
+}
+
+.title-user {
+  color: $black;
+  h3 {
+    font-weight: bolder;
+    margin: 10px 0;
+    padding: 0;
+    text-align: center;
+  }
+}
+
+
+.container-card-right {
+ background: $white;
+ max-width: 300px;
+ margin: 0 auto;
+ margin-top: 20px;
+ padding: 10px 30px;
+ border-radius: 20px;
+ .wrapper {
+  margin: 0;
+  .header {
+   padding: 0;
+   margin-top: -30px;
+ }
+}
+}
+
+.datepicker {
+  background: #333;
+  border: 1px solid #555;
+  color: #EEE;
+}
+
