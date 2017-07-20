@@ -1,6 +1,6 @@
 <% content_for :title, "Lord of War - Booking" %>
 
-<div class="container text-center">
+<div class="container text-center" id="top">
   <div class="row col-xs-12 col-sm-9 col-sm-offset-3 ">
     <h2 class="title">Your booking details<h2>
       <div class="container-card">
@@ -35,10 +35,16 @@
 
             </div>
           </div>
-          <%= simple_form_for weapon_bookings_path(@weapon, @booking) do |f| %>
-              <%= f.submit "Ask for booking", class: "askBtn" %>
-              <% end %>
-          </div>
+
+          <%= simple_form_for [@weapon, @booking] do |f| %>
+          <%= f.hidden_field :start_date, value: @start_date %>
+          <%= f.hidden_field :end_date, value: @start_date %>
+          <%= f.hidden_field :hirer_id, value: current_user.id %>
+          <%= f.hidden_field :weapon_id, value: @weapon.id %>
+          <%= f.hidden_field :status, value: "pending" %>
+          <%= f.submit "Ask for booking", class: "askBtn" %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
