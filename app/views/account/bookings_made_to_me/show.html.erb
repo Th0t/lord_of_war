@@ -1,0 +1,48 @@
+<% content_for :title, "Lord of War - Bookings made to me" %>
+
+<div class="container text-center">
+  <div class="row col-xs-12">
+    <h2 class="title">Booking details<h2>
+      <div class="container-card">
+        <div class="wrapper">
+
+         <div class="header">
+          <div class="price">
+            <h1>€ <%= number_with_delimiter(@total_price) %> for <%= @number_of_days %> days </h1>
+          </div>
+
+        </div>
+        <div class="product">
+          <%= image_tag("#{@weapon.photo_url}", class: "img") %>
+        </div>
+
+        <div class="info">
+          <div class="title">
+            <h1><%= @weapon.title %></h1>
+            <p><%= @weapon.description %></p>
+            <div class="booking_info text-center">
+
+              <ul class="list-group list-booking">
+                <li class="list-group-item"><h5><strong>Starting date: </strong><%= @booking.start_date %></h5></li>
+                <li class="list-group-item"><h5><strong>Ending date: </strong><%= @booking.end_date %></h5></li>
+                <li class="list-group-item"><h5><strong>Total number of days: </strong><%= @number_of_days%> </h5></li>
+                <li class="list-group-item"><h5><strong>Price / day: </strong> € <%= number_with_delimiter(@weapon.price) %></h5></li>
+                <li class="list-group-item"><h5><strong>Hirer: </strong><%= User.find(@booking.hirer_id).first_name + " " + User.find(@booking.hirer_id).first_name %></h5></li>
+                <li class="list-group-item"><h5><strong>Available: </strong><%= @weapon.availability %></h5></li>
+                <li class="list-group-item"><h5><strong>Status: </strong><%= @booking.status %></h5></li>
+              </ul>
+
+            </div>
+            <% if @booking.status == "pending" %>
+            <div class="inline-list">
+              <%= link_to "Accept booking", accept_account_bookings_made_to_me_path, method: :patch, class: "btn btn-success" %>
+              <%= link_to "Reject booking", reject_account_bookings_made_to_me_path, method: :patch, class: "btn btn-danger" %>
+            </div>
+            <% end %>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>

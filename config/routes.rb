@@ -19,7 +19,7 @@ Rails.application.routes.draw do
 
     resource :profile, only: [:show]
     resources :bookings_made_by_me, only: [:index, :show]
-    resources :bookings_made_to_me, only: [:index] do
+    resources :bookings_made_to_me, only: [:index, :show] do
       member do
         patch :accept
         patch :reject
