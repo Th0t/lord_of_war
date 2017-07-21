@@ -1,4 +1,6 @@
 class Weapon < ApplicationRecord
+  mount_uploader :photo, PhotoUploader
+
   # weapons category are defined again in weapon controller
   weapons_category = %w(pistols riffles knives heavy shotguns swords)
 

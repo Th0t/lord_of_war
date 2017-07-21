@@ -23,7 +23,7 @@ class BookingsController < ApplicationController
     @weapon = Weapon.find(params[:weapon_id])
     @booking = Booking.new(booking_params)
     if @booking.save
-      redirect_to account_bookings_made_by_me_path
+      redirect_to account_bookings_made_by_me_path(@booking)
       flash[:notice] = "Your booking request has been sent to the owner"
     else
       redirect_to weapon_path(@weapon)
