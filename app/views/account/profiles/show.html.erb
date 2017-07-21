@@ -12,9 +12,9 @@
     <a class="tab"  data-target="#booksbyme">
       <p>Books by me</p>
     </a>
-    <a class="tab"  data-target="#settings">
+    <%= link_to account_profile_edit_path, class: "tab", :data => { :target => "#settings" } do %>
       <p>Settings</p>
-    </a>
+    <% end %>
   </div>
 </div>
 
