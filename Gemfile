@@ -5,6 +5,9 @@ gem 'cloudinary'
 gem 'carrierwave',  '~> 0.11.2'
 
 gem 'devise'
+gem 'pry-byebug'
+gem 'cloudinary'
+gem 'carrierwave', '~> 0.11.2'
 
 gem 'figaro'
 gem 'jbuilder', '~> 2.0'
