@@ -1,26 +1,38 @@
 <% content_for :title, "Lord of War - Bookings made by me" %>
 
+<div class="container text-center">
+  <%= render 'account/tab-menu', booksbyme_class: "tab active" %>
+</div>
+
+
 <div class="container">
-<ul class="list-group">
-  <% @bookings_made_by_me.each do |booking| %>
-    <%= link_to account_bookings_made_by_me_path(booking), id:"link" do %>
-      <li class="list-group-item" id="list-bookings-made-by-me">
-      <div>
-      <strong>#<%= booking.id %>
-      - <%= Weapon.find(booking.weapon_id).title %>
-      - € <%= number_with_delimiter((booking.end_date - booking.start_date).to_i * Weapon.find(booking.weapon_id).price) %>  </strong>
-      - reservation: from <%=booking.start_date %> to <%=booking.end_date %>
-      </div>
-        <% if booking.status == "pending" %>
-        <p class="button-status-blue"> <%= booking.status %> </p>
-        <% elsif booking.status == "accepted" %>
-        <p class="button-status-green"><%= booking.status %></p>
-        <% else %>
-        <p class="button-status-red"><%= booking.status %></p>
+  <div class="tab-content" id="booksbyme">
+    <ul class="list-group">
+      <% unless @bookings_made_by_me.empty? %>
+        <% @bookings_made_by_me.each do |booking| %>
+          <%= link_to account_bookings_made_by_me_path(booking), id:"link" do %>
+            <li class="list-group-item" id="list-bookings-made-by-me">
+              <div>
+                <strong>
+                  #<%= booking.id %>
+                  - <%= Weapon.find(booking.weapon_id).title %>
+                  - € <%= number_with_delimiter((booking.end_date - booking.start_date).to_i * Weapon.find(booking.weapon_id).price) %>
+                </strong>
+                - reservation: from <%=booking.start_date %> to <%=booking.end_date %>
+              </div>
+              <% if booking.status == "pending" %>
+                <p class="button-status-blue"> <%= booking.status %> </p>
+              <% elsif booking.status == "accepted" %>
+                <p class="button-status-green"><%= booking.status %></p>
+              <% else %>
+                <p class="button-status-red"><%= booking.status %></p>
+              <% end %>
+            </li>
+          <% end %>
         <% end %>
-      </li>
-      </li>
-    <% end %>
-  <% end %>
-</ul>
+      <% else %>
+          <p>No bookings made by you yet!</p>
+      <% end %>
+    </ul>
+  </div>
 </div>
