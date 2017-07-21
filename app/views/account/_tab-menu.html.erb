@@ -1,0 +1,17 @@
+<div class="tabs">
+  <%= link_to account_profile_path, class: dashboard_class ||= "tab", :data => { :target => "#dashboard" } do %>
+    <p>Dashboard</p>
+  <% end %>
+  <%= link_to account_weapons_path, class: weapons_class ||= "tab", :data => { :target => "#weapons" } do %>
+    <p>My weapons</p>
+  <% end %>
+  <%= link_to account_bookings_made_to_me_index_path, class: booksforme_class ||= "tab", :data => { :target => "#bookstome" } do %>
+    <p>Books to me</p>
+  <% end %>
+  <%= link_to account_bookings_made_by_me_index_path, class: booksbyme_class ||= "tab", :data => { :target => "#booksbyme" } do %>
+    <p>Books by me</p>
+  <% end %>
+  <%= link_to account_profile_edit_path, class: settings_class ||= "tab", :data => { :target => "#settings" } do %>
+    <p>Settings</p>
+  <% end %>
+</div>
