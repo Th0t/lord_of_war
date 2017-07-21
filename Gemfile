@@ -1,6 +1,9 @@
 source 'https://rubygems.org'
 ruby '2.3.3'
 
+gem 'cloudinary'
+gem 'carrierwave',  '~> 0.11.2'
+
 gem 'devise'
 
 gem 'figaro'

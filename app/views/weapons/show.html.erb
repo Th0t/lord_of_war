@@ -18,7 +18,7 @@
           </div>
 
           <div class="product">
-            <%= image_tag("#{@weapon.photo_url}", class: "img") %>
+            <%= cl_image_tag @weapon.photo,  class: "img"  %>
           </div>
 
           <div class="info">
