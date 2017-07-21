@@ -7,7 +7,7 @@
     <h1>Welcome on Lord of War</h1>
     <p>Find your dream weapon</p>
     <form action="weapons" method="get" class="form-inline">
-      <input name="query" id="query" type="text" class="form-control input-lg" placeholder="Show all weapons"/>
+      <input name="query" id="query" type="text" class="form-control input-lg black-color" placeholder="Show all weapons"/>
       <input type="submit" value="Go!" class="btn btn-primary btn-lg"/>
     </form>
     <a class="last-arrow-link" href="#last-weapons"><%= image_tag 'down-arrow.png' %></a>
@@ -16,6 +16,7 @@
 
 <div id="last-weapons" class="container">
   <div class="row">
+    <h2>Last weapons put online :</h2>
     <% @weapons.each do |weapon| %>
     <div class="col-xs-12 col-sm-3">
       <%= link_to weapon_path(weapon.id) do %>
@@ -36,17 +37,17 @@
 <div class="container" id="features">
   <h1 class="text-center">Handle what you want</h1>
   <div class="col-xs-12 col-sm-6 col-md-4">
-    <p align="center"><%= image_tag 'COD_BO2_Ray_Gun_r.png'%></p>
+    <p align="center"><%= image_tag 'COD_BO2_Ray_Gun_r.png', class: "feature-img" %></p>
     <h2 class="text-center">Discover</h2>
     <p class="text-center">Discover unseen and unused weapons</p>
   </div>
   <div class="col-xs-12 col-sm-6 col-md-4">
-    <p align="center"><%= image_tag 'beer.png'%></p>
+    <p align="center"><%= image_tag 'beer.png', class: "feature-img" %></p>
     <h2 class="text-center">Share</h2>
     <p class="text-center">Share a common passion with users here</p>
   </div>
   <div class="col-xs-12 col-sm-6 col-md-4">
-    <p align="center"><%= image_tag 'dollar.png'%></p>
+    <p align="center"><%= image_tag 'dollar.png', class: "feature-img" %></p>
     <h2 class="text-center">Save money</h2>
     <p class="text-center">No need to buy a weapon to be disapointed aftermath</p>
   </div>

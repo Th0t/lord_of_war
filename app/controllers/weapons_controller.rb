@@ -21,7 +21,7 @@ class WeaponsController < ApplicationController
     end
 
     if query_hash[:query].present?
-      @weapons = @weapons.where("title LIKE ?", "%#{query_hash[:query]}%")
+      @weapons = @weapons.where("LOWER(title) LIKE ?", "%#{query_hash[:query].downcase}%")
     end
   end
 
