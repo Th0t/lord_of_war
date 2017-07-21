@@ -21,7 +21,7 @@
       <%= link_to weapon_path(weapon.id) do %>
       <div class="card">
         <div class="card-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
-        url('<%= image_path weapon.photo_url %>');"></div>
+        url('<%= image_path weapon.photo %>');"></div>
         <div class="card-description">
           <div class="card-price"><%= "#{number_with_delimiter(weapon.price)} €" %></div>
           <div class="card-title"><%= weapon.title %></div>
