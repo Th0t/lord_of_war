@@ -8,6 +8,7 @@ $(document).ready(function() {
 
   $('.datepicker').datepicker({
     startDate: new Date(),
-    weekStart: 1
+    weekStart: 1,
+    autoclose: true
   });
 });
