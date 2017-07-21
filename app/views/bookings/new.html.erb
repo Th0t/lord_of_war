@@ -38,7 +38,7 @@
 
           <%= simple_form_for [@weapon, @booking] do |f| %>
           <%= f.hidden_field :start_date, value: @start_date %>
-          <%= f.hidden_field :end_date, value: @start_date %>
+          <%= f.hidden_field :end_date, value: @end_date %>
           <%= f.hidden_field :hirer_id, value: current_user.id %>
           <%= f.hidden_field :weapon_id, value: @weapon.id %>
           <%= f.hidden_field :status, value: "pending" %>

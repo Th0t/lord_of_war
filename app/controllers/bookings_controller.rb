@@ -22,6 +22,8 @@ class BookingsController < ApplicationController
   def create
     @weapon = Weapon.find(params[:weapon_id])
     @booking = Booking.new(booking_params)
+    @number_of_days = (@booking.end_date - @booking.start_date).to_i
+    @total_price =  @number_of_days * @weapon.price
     if @booking.save
       redirect_to account_bookings_made_by_me_path(@booking)
       flash[:notice] = "Your booking request has been sent to the owner"
